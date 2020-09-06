@@ -7,6 +7,8 @@ vAPI stands for Vulnerable Adversely Programmed Interface which is Self-Hostable
 
 # Installation
 
+## Copying the Code
+
 ```bash
 cd <your-hosting-directory>
 ```
@@ -14,3 +16,13 @@ cd <your-hosting-directory>
 ```bash
 git clone https://github.com/roottusk/vapi.git
 ```
+
+## Setting Up Postman
+
+Import vAPI.postman_collection.json in Postman
+
+## Setting up the Database
+
+Import vapi.sql into MySQL Database
+
+Configure the DB Credentials in the vapi/db/var.php
