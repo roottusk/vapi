@@ -35,3 +35,9 @@ Import vAPI.postman_collection.json in Postman
 Import vapi.sql into MySQL Database
 
 Configure the DB Credentials in the vapi/db/var.php
+
+
+# Usage
+
+Browse localhost/vapi for Documentation
+
