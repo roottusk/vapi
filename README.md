@@ -9,7 +9,8 @@ vAPI stands for Vulnerable Adversely Programmed Interface which is Self-Hostable
 
 ```bash
 cd <your-hosting-directory>
+```
 
+```bash
 git clone https://github.com/roottusk/vapi.git
-
 ```
