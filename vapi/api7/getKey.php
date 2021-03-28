@@ -19,6 +19,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["uname"]!="")
     }
     else{
         header("Access-Control-Allow-Origin: ".$_SERVER["HTTP_ORIGIN"]);
+        $row["flag"]=base64_decode("ZmxhZ3thcGk3X2U3MWI2NTA3MTY0NWUyNGVkNTBhfQ==");
     }
     
     header("Access-Control-Allow-Credentials: true");

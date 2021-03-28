@@ -18,6 +18,10 @@ if($requestAuth->isHeaderSet())
     {
         $row=$result->fetch_assoc();
         $row["success"]="true";
+        if(isset($row["credit"]))
+            if((int)$row["credit"] >=100)
+                $row["flag"]=base64_decode("ZmxhZ3thcGk2X2FmYjk2OWRiOGI2ZTI3MjY5NGI0fQ==");
+
 
         print json_encode($row);
     }
