@@ -1,0 +1,40 @@
+version: "3.1"
+services:
+    www:
+        build: .
+        ports: 
+            - "80:80"
+        volumes:
+            - ./vapi:/var/www/html/vapi
+        links:
+            - db
+        networks:
+            - default
+    db:
+        image: mysql:8.0
+        ports: 
+            - "3306:3306"
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_DATABASE: vapi
+            MYSQL_USER: vapi
+            MYSQL_PASSWORD: vapi123456
+            MYSQL_ROOT_PASSWORD: vapi123456
+        volumes:
+            - ./database:/docker-entrypoint-initdb.d
+            - ./conf:/etc/mysql/conf.d
+            - persistent:/var/lib/mysql
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8000:80
+        environment:
+            MYSQL_USER: user
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test 
+volumes:
+    persistent:
