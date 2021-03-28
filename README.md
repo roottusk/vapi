@@ -1,6 +1,6 @@
 # vAPI
 
-[![Docker](https://img.shields.io/badge/docker-supported-%2300D1D1)](https://github.com/roottusk/vapi) 
+[![Docker](https://img.shields.io/badge/docker-supported-%2300D1D1)](https://github.com/roottusk/vapi#installation-docker) 
 [![Build Status](https://travis-ci.org/roottusk/vapi.svg?branch=master)](https://travis-ci.org/roottusk/vapi) 
 [![Version](https://img.shields.io/badge/version-v1.0-blue)](https://github.com/roottusk/vapi) 
 [![PHP](https://img.shields.io/badge/php-7.4.7-orange)](https://github.com/roottusk/vapi)
