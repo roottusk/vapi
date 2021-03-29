@@ -6,7 +6,7 @@
 [![PHP](https://img.shields.io/badge/php-7.4.7-orange)](https://github.com/roottusk/vapi)
 
 <p align="center">
-![Logo](vapi_logo.png)
+<img src="vapi_logo.png" >
 </p>
 
 vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable PHP Interface that mimics OWASP API Top 10 scenarios in the means of Exercises. 
