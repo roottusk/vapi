@@ -39,7 +39,8 @@ git clone https://github.com/roottusk/vapi.git
 
 ## Setting Up Postman
 
-Import vAPI.postman_collection.json in Postman
+- Import vAPI.postman_collection.json in Postman
+- Import vAPI_ENV.postman_environment.json in Postman
 
 ## Setting up the Database
 
