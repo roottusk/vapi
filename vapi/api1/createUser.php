@@ -34,7 +34,7 @@ if(validateAll()){
     $course=mysqli_real_escape_string($dbconn,$course);
     $password=mysqli_real_escape_string($dbconn,$password);
 
-    $query="INSERT into api1users values('','$username','$name','$course','$password')";
+    $query="INSERT into api1users (username, name, course, password) values ('$username','$name','$course','$password')";
 
     if(mysqli_query($dbconn,$query)){
         $latest_id=mysqli_insert_id($dbconn);
