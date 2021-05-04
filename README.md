@@ -43,6 +43,12 @@ git clone https://github.com/roottusk/vapi.git
 - Import vAPI.postman_collection.json in Postman
 - Import vAPI_ENV.postman_environment.json in Postman
 
+OR
+
+Use Public Workspace 
+
+https://www.postman.com/roottusk/workspace/vapi/
+
 ## Setting up the Database
 
 Import vapi.sql into MySQL Database
