@@ -19,7 +19,7 @@ if($requestAuth->isHeaderSet())
         
         $result2 = mysqli_query($dbconn,"SELECT id,username,name,address,mobileno from api5users");
         
-        while($row=$result->fetch_assoc())
+        while($row=$result2->fetch_assoc())
         {
             $r[]=$row;
         }
