@@ -20,7 +20,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
         $row=$result->fetch_assoc();
         $_SESSION["uname"]=$row["username"];
         http_response_code(200);
-        print json_encode(array("loginsuccess"=>"true","msg"=>"User logged in"));
+        print json_encode(array("loginsuccess"=>"true","msg"=>"User logged in","flag"=>base64_decode("ZmxhZ3thcGk5XzgxZTMwNmJkZDIwYTc3MzRlMjQ0fQ==")));
     }
     else{
         http_response_code(401);

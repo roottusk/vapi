@@ -9,7 +9,7 @@ require '../db/CustomHeaderAuth.php';
 $username=mysqli_real_escape_string($dbconn, $_POST["username"]);
 $password=mysqli_real_escape_string($dbconn, $_POST["password"]);
 
-$query="SELECT * from api1users where username='$username' AND password='$password'";
+$query="SELECT * from api3users where username='$username' AND password='$password'";
 
 $result=mysqli_query($dbconn,$query);
 
