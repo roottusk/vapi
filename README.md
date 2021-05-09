@@ -60,3 +60,9 @@ Configure the DB Credentials in the vapi/db/var.php
 
 Browse localhost/vapi for Documentation
 
+# Mentions and References
+[1] https://apisecurity.io/issue-132-experian-api-leak-breaches-digitalocean-geico-burp-plugins-vapi-lab/
+
+[2] https://dsopas.github.io/MindAPI/references/
+
+
