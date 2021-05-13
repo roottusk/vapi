@@ -65,4 +65,6 @@ Browse localhost/vapi for Documentation
 
 [2] https://dsopas.github.io/MindAPI/references/
 
+[3] https://dzone.com/articles/api-security-weekly-issue-132
+
 
