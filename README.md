@@ -5,7 +5,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blueviolet.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Version](https://img.shields.io/badge/version-v1.0-blue)](https://github.com/roottusk/vapi) 
 [![PHP](https://img.shields.io/badge/php-7.4.7-orange)](https://github.com/roottusk/vapi)
-
+[![Issues](https://img.shields.io/github/issues-closed/roottusk/vapi?color=%23eb3434)](https://github.com/roottusk/vapi/issues)
 <p align="center">
 <img src="vapi_logo.png" >
 </p>
