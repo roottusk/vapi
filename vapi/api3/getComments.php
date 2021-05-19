@@ -11,12 +11,15 @@ $result=mysqli_query($dbconn,$query);
 
 if(mysqli_num_rows($result)>0)
 {
+    $arr = array();
+    
     while($row = $result->fetch_assoc()){
 
-        $r[]=$row;
+        $arr[]=$row;
         
     }
-
+    $r["comments"]=$arr;
+    
     $r["success"]="true";
 
     print json_encode($r);
