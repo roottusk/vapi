@@ -6,7 +6,7 @@ require '../db/dbconn.php';
 require '../db/headerset.php';
 require '../db/CustomHeaderAuth.php';  
 
-
+$flag=false;
 
 if(isset($_SESSION["uname"]) && $_SESSION["uname"]!="")
 {
@@ -19,7 +19,8 @@ if(isset($_SESSION["uname"]) && $_SESSION["uname"]!="")
     }
     else{
         header("Access-Control-Allow-Origin: ".$_SERVER["HTTP_ORIGIN"]);
-        $row["flag"]=base64_decode("ZmxhZ3thcGk3X2U3MWI2NTA3MTY0NWUyNGVkNTBhfQ==");
+	$flag=true;
+        
     }
     
     header("Access-Control-Allow-Credentials: true");
@@ -33,6 +34,11 @@ if(isset($_SESSION["uname"]) && $_SESSION["uname"]!="")
         http_response_code(200);
         $row=$result->fetch_assoc();
         $row["success"]="true";
+
+	if($flag)
+	{
+		$row["flag"]=base64_decode("ZmxhZ3thcGk3X2U3MWI2NTA3MTY0NWUyNGVkNTBhfQ==");
+	}
         print json_encode($row);
     }
     else{
