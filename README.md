@@ -67,4 +67,9 @@ Browse localhost/vapi for Documentation
 
 [3] https://dzone.com/articles/api-security-weekly-issue-132
 
+# Walkthroughs/Writeups
+
+‼️ Spoiler Alert
+
+[1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471
 
