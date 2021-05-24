@@ -40,8 +40,8 @@ git clone https://github.com/roottusk/vapi.git
 
 ## Setting Up Postman
 
-- Import vAPI.postman_collection.json in Postman
-- Import vAPI_ENV.postman_environment.json in Postman
+- Import `vAPI.postman_collection.json` in Postman
+- Import `vAPI_ENV.postman_environment.json` in Postman
 
 OR
 
@@ -51,14 +51,14 @@ https://www.postman.com/roottusk/workspace/vapi/
 
 ## Setting up the Database
 
-Import vapi.sql into MySQL Database
+Import `vapi.sql` into MySQL Database
 
-Configure the DB Credentials in the vapi/db/var.php
+Configure the DB Credentials in the `vapi/db/var.php`
 
 
 # Usage
 
-Browse localhost/vapi for Documentation
+Browse `http://localhost/vapi/` for Documentation
 
 # Mentions and References
 [1] https://apisecurity.io/issue-132-experian-api-leak-breaches-digitalocean-geico-burp-plugins-vapi-lab/
