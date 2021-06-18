@@ -67,6 +67,10 @@ Browse `http://localhost/vapi/` for Documentation
 
 [3] https://dzone.com/articles/api-security-weekly-issue-132
 
+[4] https://owasp.org/www-project-vulnerable-web-applications-directory/
+
+[5] https://github.com/arainho/awesome-api-security
+
 # Walkthroughs/Writeups
 
 ‼️ Spoiler Alert
