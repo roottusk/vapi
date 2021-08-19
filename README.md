@@ -77,3 +77,7 @@ Browse `http://localhost/vapi/` for Documentation
 
 [1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471
 
+# Acknowledgements
+
+* The icon and banner uses image from [Flaticon](https://www.flaticon.com/free-icon/bug_190835)
+
