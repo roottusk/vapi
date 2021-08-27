@@ -25,7 +25,7 @@ if(validateAll()){
 
     $authkey=hash("sha256",$username.$password.$API7_SECRETSALT);
 
-    $query="INSERT into api7users values('','$username','$password','$authkey')";
+    $query="INSERT into api7users(username,password,authkey) values('$username','$password','$authkey')";
     $result=mysqli_query($dbconn,$query);
     
 

@@ -23,7 +23,7 @@ class User{
         $this->password=mysqli_real_escape_string($dbconnfunc,$this->password);
         $this->credit=mysqli_real_escape_string($dbconnfunc,$this->credit);
 
-        $query="INSERT into api6users values('','$this->name','$this->username','$this->password','$this->credit')";
+        $query="INSERT into api6users (name,username,password,credit) values('$this->name','$this->username','$this->password','$this->credit')";
 
         $result=mysqli_query($dbconnfunc,$query);
 

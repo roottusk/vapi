@@ -22,7 +22,7 @@ if($result)
     print json_encode(array("success"=>"true","comment"=>"posted"));
 }
 else{
-    http_response_code(401);
+    http_response_code(200);
 
-    print json_encode(array("success"=>"false","cause"=>"DB Error"));
+    print json_encode(array("success"=>"false","cause"=>"One comment per device"));
 }
