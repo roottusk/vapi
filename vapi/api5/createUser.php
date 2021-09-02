@@ -40,7 +40,7 @@ if(validateAll()){
     $mobileno=mysqli_real_escape_string($dbconn,$mobileno);
 
 
-    $query="INSERT into api5users values('','$username','$password','$name','$address','$mobileno')";
+    $query="INSERT into api5users (username, password, name, address, mobileno) values ('$username','$password','$name','$address','$mobileno')";
 
     if(mysqli_query($dbconn,$query)){
         $latest_id=mysqli_insert_id($dbconn);
