@@ -63,3 +63,11 @@ Route::get('api5/user/{id}','App\Http\Controllers\API5UsersController@show');
 Route::post('api5/user','App\Http\Controllers\API5UsersController@store');
 
 Route::get('api5/users','App\Http\Controllers\API5UsersController@showall');
+
+
+/* API 6 */
+
+Route::post('api6/user','App\Http\Controllers\API6UsersController@store');
+
+Route::get('api6/user/me','App\Http\Controllers\API6UsersController@show');
+
