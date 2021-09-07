@@ -18,4 +18,14 @@ class Variables
     {
         return "ZmxhZ3thcGk2X2FmYjk2OWRiOGI2ZTI3MjY5NGI0fQ==";
     }
+
+    public static function getAPI7SecretSalt()
+    {
+        return "WW91Q2FudEdldFRoaXM=";
+    }
+
+    public static function getAPI7Flag()
+    {
+        return "ZmxhZ3thcGk3X2U3MWI2NTA3MTY0NWUyNGVkNTBhfQ==";
+    }
 }

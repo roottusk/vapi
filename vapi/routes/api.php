@@ -71,3 +71,14 @@ Route::post('api6/user','App\Http\Controllers\API6UsersController@store');
 
 Route::get('api6/user/me','App\Http\Controllers\API6UsersController@show');
 
+/* API 7 */
+
+Route::post('api7/user','App\Http\Controllers\API7UsersController@store');
+
+Route::get('api7/user/login','App\Http\Controllers\API7UsersController@login');
+
+Route::get('api7/user/key','App\Http\Controllers\API7UsersController@showkey');
+
+Route::get('api7/user/logout','App\Http\Controllers\API7UsersController@logout');
+
+
