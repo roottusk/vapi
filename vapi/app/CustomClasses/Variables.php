@@ -28,4 +28,9 @@ class Variables
     {
         return "ZmxhZ3thcGk3X2U3MWI2NTA3MTY0NWUyNGVkNTBhfQ==";
     }
+
+    public static function getAPI10Flag()
+    {
+        return "ZmxhZ3thcGkxMF81ZGI2MTFmN2MxZmZkNzQ3OTcxZn0=";
+    }
 }

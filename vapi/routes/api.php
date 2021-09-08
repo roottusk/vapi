@@ -89,4 +89,12 @@ Route::get('api8/user/secret','App\Http\Controllers\API8UsersController@showsecr
 
 /* API 9 v1 */
 
+Route::post('api9/v1/user/login','App\Http\Controllers\API9UsersController@login');
+
 /* API 9 v2 */
+
+Route::post('api9/v2/user/login','App\Http\Controllers\API9UsersController@login')->middleware('throttle:5,1');
+
+/* API 10 */
+
+Route::get('api10/user/flag','App\Http\Controllers\API10UsersController@flag');
