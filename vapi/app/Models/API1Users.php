@@ -9,6 +9,7 @@ class API1Users extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $fillable = ['username','name','course','password'];
     protected $hidden = ['password'];
 

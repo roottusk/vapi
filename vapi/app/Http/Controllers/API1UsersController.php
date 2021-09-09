@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\API1Users;
 use Illuminate\Http\Request;
 use App\CustomClasses\CustomHeaderAuth;
-
+use Exception;
 
 class API1UsersController extends Controller
 {
@@ -35,7 +35,18 @@ class API1UsersController extends Controller
 
     public function store(Request $request)
     {
-        return API1Users::create(json_decode($request->getContent(), true));
+        // try
+        // {
+            return API1Users::create(json_decode($request->getContent(), true));
+        // }
+        // catch(Exception $e)
+        // {
+        //     return response(json_encode($e),400)
+        //         ->header('Content-Type', 'application/json');
+        // }
+
+        // return response(json_encode(array("success"=>"false")),400)
+        //     ->header('Content-Type', 'application/json');
     }
 
     public function update(Request $request, $id)

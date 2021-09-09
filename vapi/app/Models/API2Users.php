@@ -9,6 +9,7 @@ class API2Users extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $fillable = ['email','name','token','address','city','country','password'];
     protected $hidden = ['password'];
 }
