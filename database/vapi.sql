@@ -440,7 +440,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `a_p_i1_users`
 --
 ALTER TABLE `a_p_i1_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `a_p_i2_users`
@@ -452,7 +452,7 @@ ALTER TABLE `a_p_i2_users`
 -- AUTO_INCREMENT for table `a_p_i3_comments`
 --
 ALTER TABLE `a_p_i3_comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `a_p_i3_users`

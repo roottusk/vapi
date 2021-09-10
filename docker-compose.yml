@@ -2,7 +2,6 @@ version: "3.1"
 services:
     www:
         build: .
-        command: php vapi/artisan serve --host=0.0.0.0
         ports: 
             - "80:80"
         volumes:
@@ -11,16 +10,16 @@ services:
             - db
         networks:
             - default
+        command: php vapi/artisan serve --host=0.0.0.0
     db:
         image: mysql:8.0
-        restart: always
-        security_opt:
-            - seccomp:unconfined
         ports: 
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_DATABASE: vapi
+            MYSQL_USER: vapi
+            MYSQL_PASSWORD: vapi123456
             MYSQL_ROOT_PASSWORD: vapi123456
         volumes:
             - ./database:/docker-entrypoint-initdb.d
