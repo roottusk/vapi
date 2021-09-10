@@ -15,7 +15,7 @@ vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Int
 
 # Requirements
 
-* Apache Server 
+* PHP
 * MySQL
 * PostMan
 * MITM Proxy
