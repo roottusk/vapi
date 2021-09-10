@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "19a7b195-085f-4537-9ac9-c78c03982c58",
+		"_postman_id": "8c02469a-2dad-4716-a057-07bb5fef0874",
 		"name": "vAPI",
+		"description": "vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Interface that mimics OWASP API Top 10 scenarios in the means of Exercises.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -16,11 +17,10 @@
 							"script": {
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
-									"var api1_id = jsonData.userId;\r",
+									"var api1_id = jsonData.id;\r",
 									"console.log(\"API 1 User ID : \"+api1_id);\r",
 									"postman.setEnvironmentVariable(\"api1_id\",api1_id);\r",
-									"var reqData = JSON.stringify(request.data);\r",
-									"var reqData = JSON.parse(reqData);\r",
+									"var reqData = JSON.parse(request.data);\r",
 									"var api1_username=reqData.username;\r",
 									"var api1_password=reqData.password;\r",
 									"var api1_auth=btoa(api1_username+\":\"+api1_password);\r",
@@ -33,39 +33,28 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "",
-									"description": "Set a Unique Username",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "",
-									"description": "Full Name",
-									"type": "text"
-								},
-								{
-									"key": "course",
-									"value": "",
-									"description": "Course you want to Enroll",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "",
-									"description": "A Strong Password",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"\",\r\n    \"name\": \"\",\r\n    \"course\": \"\",\r\n    \"password\": \"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api1/createUser.php",
+							"raw": "http://{{host}}/vapi/api1/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -73,7 +62,7 @@
 							"path": [
 								"vapi",
 								"api1",
-								"createUser.php"
+								"user"
 							]
 						}
 					},
@@ -99,10 +88,15 @@
 								"key": "Authorization-Token",
 								"value": "{{api1_auth}}",
 								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api1/getUser.php?id={{api1_id}}",
+							"raw": "http://{{host}}/vapi/api1/user/{{api1_id}}",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -110,13 +104,68 @@
 							"path": [
 								"vapi",
 								"api1",
-								"getUser.php"
+								"user",
+								"{{api1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"var api1_id = jsonData.id;\r",
+									"console.log(\"API 1 User ID : \"+api1_id);\r",
+									"postman.setEnvironmentVariable(\"api1_id\",api1_id);\r",
+									"var reqData = JSON.parse(request.data);\r",
+									"var api1_username=reqData.username;\r",
+									"var api1_password=reqData.password;\r",
+									"var api1_auth=btoa(api1_username+\":\"+api1_password);\r",
+									"console.log(\"API 1 Auth : \"+api1_auth);\r",
+									"postman.setEnvironmentVariable(\"api1_auth\",api1_auth);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{api1_auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"name\":\"\",\r\n    \"course\":\"\",\r\n    \"password\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}/vapi/api1/user/{{api1_id}}",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
 							],
-							"query": [
-								{
-									"key": "id",
-									"value": "{{api1_id}}"
-								}
+							"path": [
+								"vapi",
+								"api1",
+								"user",
+								"{{api1_id}}"
 							]
 						}
 					},
@@ -166,24 +215,19 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "email",
-									"value": "savanna48@ortiz.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "zTyBwV/9",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"\",\r\n    \"password\":\"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api2/loginUser.php",
+							"raw": "http://{{host}}/vapi/api2/user/login",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -191,25 +235,26 @@
 							"path": [
 								"vapi",
 								"api2",
-								"loginUser.php"
+								"user",
+								"login"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get User",
+					"name": "Get Details",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
-								"key": "Auth-Key",
-								"value": "{{api2_auth}}",
-								"type": "text"
+								"key": "Authorization-Token",
+								"type": "text",
+								"value": "{{api2_auth}}"
 							}
 						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api2/getUser.php",
+							"raw": "http://{{host}}/vapi/api2/user/details",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -217,7 +262,8 @@
 							"path": [
 								"vapi",
 								"api2",
-								"getUser.php"
+								"user",
+								"details"
 							]
 						}
 					},
@@ -250,27 +296,22 @@
 			"name": "API3",
 			"item": [
 				{
-					"name": "User Login",
+					"name": "Create User",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "testuser",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "test123",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\",\r\n    \"name\":\"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api3/loginUser.php",
+							"raw": "http://{{host}}/vapi/api3/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -278,79 +319,7 @@
 							"path": [
 								"vapi",
 								"api3",
-								"loginUser.php"
-							]
-						},
-						"description": "Accepts username and password Created in API1"
-					},
-					"response": []
-				},
-				{
-					"name": "Post Comment",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "deviceid",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "latitude",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "longitude",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "commenttext",
-									"value": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://{{host}}/vapi/api3/postComment.php",
-							"protocol": "http",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"vapi",
-								"api3",
-								"postComment.php"
-							]
-						},
-						"description": "Posts a Comment on the Post"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Comments",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{host}}/vapi/api3/getComments.php",
-							"protocol": "http",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"vapi",
-								"api3",
-								"getComments.php"
+								"user"
 							]
 						}
 					},
@@ -386,19 +355,19 @@
 					"name": "Mobile Login",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "mobileno",
-									"value": "8000000535",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileno\":\"8000000535\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api4/phoneLogin.php",
+							"raw": "http://{{host}}/vapi/api4/login",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -406,7 +375,7 @@
 							"path": [
 								"vapi",
 								"api4",
-								"phoneLogin.php"
+								"login"
 							]
 						}
 					},
@@ -430,20 +399,19 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "otp",
-									"value": "1000",
-									"description": "Lets Start from 1000 and Bruteforce till 9999",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":\"9999\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api4/verifyCode.php",
+							"raw": "http://{{host}}/vapi/api4/otp/verify",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -451,7 +419,8 @@
 							"path": [
 								"vapi",
 								"api4",
-								"verifyCode.php"
+								"otp",
+								"verify"
 							]
 						}
 					},
@@ -463,13 +432,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "Auth-Key",
+								"key": "Authorization-Token",
 								"value": "{{api4_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api4/getDetails.php",
+							"raw": "http://{{host}}/vapi/api4/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -477,14 +451,14 @@
 							"path": [
 								"vapi",
 								"api4",
-								"getDetails.php"
+								"user"
 							]
 						}
 					},
 					"response": []
 				}
 			],
-			"description": "Lack of Resources & Rate Limiting\r\n\r\nWe believe OTPs are a great way of authenticating users and secure too iff implemented correctly!",
+			"description": "Lack of Resources & Rate Limiting\r\n\r\nWe believe OTPs are a great way of authenticating users and secure too if implemented correctly!",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -517,11 +491,10 @@
 							"script": {
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
-									"var api5_id = jsonData.userId;\r",
+									"var api5_id = jsonData.id;\r",
 									"console.log(\"API 5 User ID : \"+api5_id);\r",
 									"postman.setEnvironmentVariable(\"api5_id\",api5_id);\r",
-									"var reqData = JSON.stringify(request.data);\r",
-									"var reqData = JSON.parse(reqData);\r",
+									"var reqData = JSON.parse(request.data);\r",
 									"var api5_username=reqData.username;\r",
 									"var api5_password=reqData.password;\r",
 									"var api5_auth=btoa(api5_username+\":\"+api5_password);\r",
@@ -535,39 +508,19 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "testuser2",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "test123",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "Test User",
-									"type": "text"
-								},
-								{
-									"key": "address",
-									"value": "ABC",
-									"type": "text"
-								},
-								{
-									"key": "mobileno",
-									"value": "888888888",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"testuser2\",\r\n    \"password\":\"test123\",\r\n    \"name\":\"Test User\",\r\n    \"address\":\"ABC\",\r\n    \"mobileno\":\"888888888\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api5/createUser.php",
+							"raw": "http://{{host}}/vapi/api5/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -575,7 +528,7 @@
 							"path": [
 								"vapi",
 								"api5",
-								"createUser.php"
+								"user"
 							]
 						}
 					},
@@ -593,7 +546,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api5/getUser.php",
+							"raw": "http://{{host}}/vapi/api5/user/{{api5_id}}",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -601,14 +554,15 @@
 							"path": [
 								"vapi",
 								"api5",
-								"getUser.php"
+								"user",
+								"{{api5_id}}"
 							]
 						}
 					},
 					"response": []
 				}
 			],
-			"description": "Broken Function Level Authorization\r\n\r\nYou can register yourself as a User. Thats it or is there something more? (I heard admin logins often but uses different file)",
+			"description": "Broken Function Level Authorization\r\n\r\nYou can register yourself as a User. Thats it or is there something more? (I heard admin logins often but uses different route)",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -640,8 +594,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var reqData = JSON.stringify(request.data);\r",
-									"var reqData = JSON.parse(reqData);\r",
+									"var reqData = JSON.parse(request.data);\r",
 									"var api6_username=reqData.username;\r",
 									"var api6_password=reqData.password;\r",
 									"var api6_auth=btoa(api6_username+\":\"+api6_password);\r",
@@ -654,38 +607,19 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Test User",
-									"description": "Your Awesome Name",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "testuser3",
-									"description": "Unique Username",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "test123",
-									"description": "Your Password (Are there only three fields?)",
-									"type": "text"
-								},
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api6/createUser.php",
+							"raw": "http://{{host}}/vapi/api6/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -693,7 +627,7 @@
 							"path": [
 								"vapi",
 								"api6",
-								"createUser.php"
+								"user"
 							]
 						}
 					},
@@ -711,7 +645,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api6/getUser.php",
+							"raw": "http://{{host}}/vapi/api6/user/me",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -719,7 +653,8 @@
 							"path": [
 								"vapi",
 								"api6",
-								"getUser.php"
+								"user",
+								"me"
 							]
 						}
 					},
@@ -758,12 +693,12 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var reqData = JSON.stringify(request.data);\r",
-									"var reqData = JSON.parse(reqData);\r",
+									"var reqData = JSON.parse(request.data);\r",
 									"var api7_username=reqData.username;\r",
 									"var api7_password=reqData.password;\r",
-									"postman.setEnvironmentVariable(\"api7_username\",api7_username);\r",
-									"postman.setEnvironmentVariable(\"api7_password\",api7_password);\r",
+									"var api7_auth=btoa(api7_username+\":\"+api7_password);\r",
+									"console.log(\"API 7 Auth : \"+api7_auth);\r",
+									"postman.setEnvironmentVariable(\"api7_auth\",api7_auth);\r",
 									""
 								],
 								"type": "text/javascript"
@@ -772,24 +707,19 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api7/createUser.php",
+							"raw": "http://{{host}}/vapi/api7/user",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -797,7 +727,7 @@
 							"path": [
 								"vapi",
 								"api7",
-								"createUser.php"
+								"user"
 							]
 						}
 					},
@@ -806,25 +736,22 @@
 				{
 					"name": "User Login",
 					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "{{api7_username}}",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "{{api7_password}}",
-									"type": "text"
-								}
-							]
-						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{api7_auth}}",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api7/login.php",
+							"raw": "http://{{host}}/vapi/api7/user/login",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -832,7 +759,8 @@
 							"path": [
 								"vapi",
 								"api7",
-								"login.php"
+								"user",
+								"login"
 							]
 						}
 					},
@@ -842,9 +770,15 @@
 					"name": "Get Key",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api7/getKey.php",
+							"raw": "http://{{host}}/vapi/api7/user/key",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -852,7 +786,8 @@
 							"path": [
 								"vapi",
 								"api7",
-								"getKey.php"
+								"user",
+								"key"
 							]
 						}
 					},
@@ -862,9 +797,15 @@
 					"name": "User Logout",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api7/logout.php",
+							"raw": "http://{{host}}/vapi/api7/user/logout",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -872,7 +813,8 @@
 							"path": [
 								"vapi",
 								"api7",
-								"logout.php"
+								"user",
+								"logout"
 							]
 						}
 					},
@@ -906,28 +848,35 @@
 			"item": [
 				{
 					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"var api8_auth = jsonData.authkey;\r",
+									"console.log(\"API 8 Auth : \"+api8_auth);\r",
+									"postman.setEnvironmentVariable(\"api8_auth\",api8_auth);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "",
-									"description": "Try to Bypass Login",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "",
-									"description": "Try to Bypass Login",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/vapi/api8/login.php",
+							"raw": "http://{{host}}/vapi/api8/user/login",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -935,19 +884,26 @@
 							"path": [
 								"vapi",
 								"api8",
-								"login.php"
+								"user",
+								"login"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Key",
+					"name": "Get Secret",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{api8_auth}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://{{host}}/vapi/api8/getKey.php",
+							"raw": "http://{{host}}/vapi/api8/user/secret",
 							"protocol": "http",
 							"host": [
 								"{{host}}"
@@ -955,14 +911,15 @@
 							"path": [
 								"vapi",
 								"api8",
-								"getKey.php"
+								"user",
+								"secret"
 							]
 						}
 					},
 					"response": []
 				}
 			],
-			"description": "Injection\r\n\r\nI think you won't get credential for this.You can try to login though.",
+			"description": "Injection\r\n\r\nI think you won't get credentials for this.You can try to login though.",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -994,26 +951,19 @@
 							"name": "Login",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
 								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "username",
-											"value": "admin",
-											"description": "You Know the Username But What about Password?",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "",
-											"description": "Beware there is a Rate Limit in v2 API",
-											"type": "text"
-										}
-									]
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"richardbranson\",\r\n    \"pin\":\"****\"\r\n}"
 								},
 								"url": {
-									"raw": "http://{{host}}/vapi/api9/v2/login.php",
+									"raw": "http://{{host}}/vapi/api9/v2/user/login",
 									"protocol": "http",
 									"host": [
 										"{{host}}"
@@ -1022,7 +972,8 @@
 										"vapi",
 										"api9",
 										"v2",
-										"login.php"
+										"user",
+										"login"
 									]
 								}
 							},
@@ -1055,7 +1006,36 @@
 		},
 		{
 			"name": "API10",
-			"item": [],
+			"item": [
+				{
+					"name": "Get Flag",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{host}}/vapi/api10/user/flag",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vapi",
+								"api10",
+								"user",
+								"flag"
+							]
+						},
+						"description": "I am not kidding!"
+					},
+					"response": []
+				}
+			],
 			"description": "Nothing has been logged or monitored , You caught us :( !",
 			"event": [
 				{
@@ -1077,59 +1057,26 @@
 					}
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"name": "Injection",
-			"item": [
-				{
-					"name": "Echo Service",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{host}}/vapi/injection/echoService.php?name=yourname",
-							"protocol": "http",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"vapi",
-								"injection",
-								"echoService.php"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "yourname",
-									"description": "Execute echo <yourname> in the Backend"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Extra",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

@@ -10,6 +10,7 @@ services:
             - db
         networks:
             - default
+        command: php vapi/artisan serve --host=0.0.0.0
     db:
         image: mysql:8.0
         ports: 
