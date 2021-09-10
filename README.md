@@ -4,13 +4,13 @@
 [![Build Status](https://www.travis-ci.com/roottusk/vapi.svg?branch=master)](https://www.travis-ci.com/roottusk/vapi)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blueviolet.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Version](https://img.shields.io/badge/version-v1.0-blue)](https://github.com/roottusk/vapi) 
-[![PHP](https://img.shields.io/badge/php-7.4.7-orange)](https://github.com/roottusk/vapi)
+[![Laravel](https://img.shields.io/badge/Laravel-8-orange)](https://github.com/roottusk/vapi)
 [![Issues](https://img.shields.io/github/issues-closed/roottusk/vapi?color=%23eb3434)](https://github.com/roottusk/vapi/issues)
 <p align="center">
 <img src="vapi_logo.png" >
 </p>
 
-vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable PHP Interface that mimics OWASP API Top 10 scenarios in the means of Exercises. 
+vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Interface that mimics OWASP API Top 10 scenarios in the means of Exercises. 
 
 
 # Requirements
@@ -53,7 +53,7 @@ https://www.postman.com/roottusk/workspace/vapi/
 
 Import `vapi.sql` into MySQL Database
 
-Configure the DB Credentials in the `vapi/db/var.php`
+Configure the DB Credentials in the `vapi/.env`
 
 
 # Usage
