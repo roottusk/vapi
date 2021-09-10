@@ -11,7 +11,7 @@
 <img src="vapi_logo.png" >
 </p>
 
-vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Interface that mimics OWASP API Top 10 scenarios in the means of Exercises. 
+vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API that mimics OWASP API Top 10 scenarios in the means of Exercises. 
 
 
 # Requirements
