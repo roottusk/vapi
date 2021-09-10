@@ -1,0 +1,118 @@
+{
+    "name": "league/commonmark",
+    "type": "library",
+    "description": "Highly-extensible PHP Markdown parser which fully supports the CommonMark spec and GitHub-Flavored Markdown (GFM)",
+    "keywords": ["markdown","parser","commonmark","gfm","github","flavored","github-flavored","md"],
+    "homepage": "https://commonmark.thephpleague.com",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Colin O'Dell",
+            "email": "colinodell@gmail.com",
+            "homepage": "https://www.colinodell.com",
+            "role": "Lead Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://commonmark.thephpleague.com/",
+        "forum": "https://github.com/thephpleague/commonmark/discussions",
+        "issues": "https://github.com/thephpleague/commonmark/issues",
+        "rss": "https://github.com/thephpleague/commonmark/releases.atom",
+        "source": "https://github.com/thephpleague/commonmark"
+    },
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-mbstring": "*",
+        "league/config": "^1.1.1",
+        "psr/event-dispatcher": "^1.0",
+        "symfony/polyfill-php80": "^1.15"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "cebe/markdown": "^1.0",
+        "commonmark/cmark": "0.30.0",
+        "commonmark/commonmark.js": "0.30.0",
+        "composer/package-versions-deprecated": "^1.8",
+        "erusev/parsedown": "^1.0",
+        "github/gfm": "0.29.0",
+        "michelf/php-markdown": "^1.4",
+        "phpstan/phpstan": "^0.12.88",
+        "phpunit/phpunit": "^9.5.5",
+        "scrutinizer/ocular": "^1.8.1",
+        "symfony/finder": "^5.3",
+        "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0",
+        "unleashedtech/php-coding-standard": "^3.1",
+        "vimeo/psalm": "^4.7.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "suggest": {
+        "symfony/yaml": "v2.3+ required if using the Front Matter extension"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "commonmark/commonmark.js",
+                "version": "0.30.0",
+                "dist": {
+                    "url": "https://github.com/commonmark/commonmark.js/archive/0.30.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "commonmark/cmark",
+                "version": "0.30.0",
+                "dist": {
+                    "url": "https://github.com/commonmark/cmark/archive/0.30.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "github/gfm",
+                "version": "0.29.0",
+                "dist": {
+                    "url": "https://github.com/github/cmark-gfm/archive/0.29.0.gfm.0.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "League\\CommonMark\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\CommonMark\\Tests\\Unit\\": "tests/unit",
+            "League\\CommonMark\\Tests\\Functional\\": "tests/functional"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyse",
+        "phpunit": "phpunit --no-coverage",
+        "psalm": "psalm",
+        "test": [
+            "@phpcs",
+            "@phpstan",
+            "@psalm",
+            "@phpunit"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.1-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
