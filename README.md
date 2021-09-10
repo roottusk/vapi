@@ -38,6 +38,29 @@ cd <your-hosting-directory>
 git clone https://github.com/roottusk/vapi.git
 ```
 
+## Setting up the Database
+
+Import `vapi.sql` into MySQL Database
+
+Configure the DB Credentials in the `vapi/.env`
+
+
+## Starting MySQL service
+
+Run following command (Linux)
+
+```bash
+service mysqld start
+```
+
+## Starting Laravel Server
+
+Go to `vapi` directory and Run 
+
+```bash
+php artisan serve
+```
+
 ## Setting Up Postman
 
 - Import `vAPI.postman_collection.json` in Postman
@@ -48,13 +71,6 @@ OR
 Use Public Workspace 
 
 https://www.postman.com/roottusk/workspace/vapi/
-
-## Setting up the Database
-
-Import `vapi.sql` into MySQL Database
-
-Configure the DB Credentials in the `vapi/.env`
-
 
 # Usage
 
