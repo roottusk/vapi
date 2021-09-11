@@ -3,7 +3,7 @@
 [![Docker](https://img.shields.io/badge/docker-support-%2300D1D1)](https://github.com/roottusk/vapi#installation-docker) 
 [![Build Status](https://www.travis-ci.com/roottusk/vapi.svg?branch=master)](https://www.travis-ci.com/roottusk/vapi)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blueviolet.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Version](https://img.shields.io/badge/version-v1.0-blue)](https://github.com/roottusk/vapi) 
+[![Version](https://img.shields.io/badge/version-v1.1-blue)](https://github.com/roottusk/vapi) 
 [![PHP](https://img.shields.io/badge/php-7.3^-yellow)](https://github.com/roottusk/vapi)
 [![Laravel](https://img.shields.io/badge/Laravel-8-orange)](https://github.com/roottusk/vapi)
 [![Issues](https://img.shields.io/github/issues-closed/roottusk/vapi?color=%23eb3434)](https://github.com/roottusk/vapi/issues)
