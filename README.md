@@ -27,6 +27,15 @@ vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API tha
 docker-compose up -d
 ```
 
+## Updating 
+
+You can clone new code but may need to run the following for a fresh spin before running `docker-compose`
+
+```bash
+docker rm -f $(docker ps -a -q)
+docker volume rm $(docker volume ls -q)
+```
+
 # Installation (Manual)
 
 ## Copying the Code
