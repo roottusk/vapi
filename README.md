@@ -1,7 +1,7 @@
 # vAPI [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20vAPI%20on%20Github!&url=https://github.com/roottusk/vapi&via=vk_tushar&hashtags=apisecurity,apitop10,owasp)
 
 [![Docker](https://img.shields.io/badge/docker-support-%2300D1D1)](https://github.com/roottusk/vapi#installation-docker) 
-[![Build Status](https://www.travis-ci.com/roottusk/vapi.svg?branch=master)](https://www.travis-ci.com/roottusk/vapi)
+[![Build Status](https://app.travis-ci.com/roottusk/vapi.svg?branch=master)](https://app.travis-ci.com/roottusk/vapi)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blueviolet.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Version](https://img.shields.io/badge/version-v1.1-blue)](https://github.com/roottusk/vapi) 
 [![PHP](https://img.shields.io/badge/php-7.3^-yellow)](https://github.com/roottusk/vapi)
