@@ -6,7 +6,7 @@ You contribute to custom challenges/issues in this project !
 
 Create a vulnerable API according to a scenario in your head
 
-1. Create the API in Laravel (Models,Controllers,Tables) - The routes should follow http://localhost/vapi/arena/<yourcustomroute>
+1. Create the API in Laravel (Models,Controllers,Tables) - The routes should follow http://localhost/vapi/arena/yourcustomroute
  
 2. Create a Folder in the "Arena" Folder in the Postman Collection and add and document your routes there with proper request data and Postman Scripts.
   
