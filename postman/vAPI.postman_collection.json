@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8c02469a-2dad-4716-a057-07bb5fef0874",
+		"_postman_id": "679f51bd-d932-4d3f-8fab-c4180cdeccd0",
 		"name": "vAPI",
 		"description": "vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Interface that mimics OWASP API Top 10 scenarios in the means of Exercises.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -1057,6 +1057,10 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Arena",
+			"item": []
 		}
 	],
 	"event": [
