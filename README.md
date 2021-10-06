@@ -86,6 +86,8 @@ https://www.postman.com/roottusk/workspace/vapi/
 
 Browse `http://localhost/vapi/` for Documentation
 
+After Sending requests, refer to the Postman Tests or Environment for Generated Tokens
+
 # Mentions and References
 [1] https://apisecurity.io/issue-132-experian-api-leak-breaches-digitalocean-geico-burp-plugins-vapi-lab/
 
