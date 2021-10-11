@@ -21,6 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+/* Flag Submit Dashboard */
+
+Route::get('dashboard/flag','App\Http\Controllers\FlagController@verify');
+
+
 /* API 1 */
 
 Route::get('api1/user/{id}','App\Http\Controllers\API1UsersController@show');
@@ -98,3 +103,4 @@ Route::post('api9/v2/user/login','App\Http\Controllers\API9UsersController@login
 /* API 10 */
 
 Route::get('api10/user/flag','App\Http\Controllers\API10UsersController@flag');
+
