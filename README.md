@@ -88,6 +88,13 @@ Browse `http://localhost/vapi/` for Documentation
 
 After Sending requests, refer to the Postman Tests or Environment for Generated Tokens
 
+# Presented At
+[OWASP 20th Anniversary](https://owasp20thanniversaryevent20.sched.com/event/ll1k)
+
+# Upcoming
+[Blackhat Europe 2021 Arsenal](https://www.blackhat.com/eu-21/arsenal/schedule/index.html#vapi--vulnerable-adversely-programmed-interface-owasp-api-top--24587)
+
+
 # Mentions and References
 [1] https://apisecurity.io/issue-132-experian-api-leak-breaches-digitalocean-geico-burp-plugins-vapi-lab/
 
@@ -100,8 +107,6 @@ After Sending requests, refer to the Postman Tests or Environment for Generated 
 [5] https://github.com/arainho/awesome-api-security
 
 # Walkthroughs/Writeups
-
-‼️ Spoiler Alert
 
 [1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471
 
