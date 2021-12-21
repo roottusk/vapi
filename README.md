@@ -91,8 +91,15 @@ After Sending requests, refer to the Postman Tests or Environment for Generated 
 # Presented At
 [OWASP 20th Anniversary](https://owasp20thanniversaryevent20.sched.com/event/ll1k)
 
+[Blackhat Europe 2021 Arsenal](https://www.youtube.com/watch?v=7_Q5Rlm7Too)
+
+[HITB Cyberweek 2021, Abu Dhabi, UAE](https://cyberweek.ae/2021/hitb-armory/)
+
+[@Hack, Riyadh, KSA](https://athack.com/speakers?keys=Tushar)
+
+
 # Upcoming
-[Blackhat Europe 2021 Arsenal](https://www.blackhat.com/eu-21/arsenal/schedule/index.html#vapi--vulnerable-adversely-programmed-interface-owasp-api-top--24587)
+
 
 
 # Mentions and References
@@ -106,9 +113,11 @@ After Sending requests, refer to the Postman Tests or Environment for Generated 
 
 [5] https://github.com/arainho/awesome-api-security
 
-# Walkthroughs/Writeups
+# Walkthroughs/Writeups/Videos
 
 [1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471
+
+[2] https://www.youtube.com/watch?v=0F5opL_c5-4&list=PLT1Gj1RmR7vqHK60qS5bpNUeivz4yhmbS (Turkish Language)
 
 # Acknowledgements
 
