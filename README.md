@@ -115,6 +115,8 @@ After Sending requests, refer to the Postman Tests or Environment for Generated 
 
 [6] https://portswigger.net/daily-swig/introducing-vapi-an-open-source-lab-environment-to-learn-about-api-security
 
+[7] https://apisecurity.io/issue-169-insecure-api-wordpress-plugin-tesla-3rd-party-vulnerability-introducing-vapi/
+
 # Walkthroughs/Writeups/Videos
 
 [1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471
