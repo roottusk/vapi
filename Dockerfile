@@ -6,3 +6,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-install zip
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+COPY ./vapi /var/www/html/vapi
+
+RUN rm /var/www/html/vapi/.env
+
+CMD ["php","/var/www/html/vapi/artisan","serve","--host=0.0.0.0"]
