@@ -121,7 +121,9 @@ After Sending requests, refer to the Postman Tests or Environment for Generated 
 
 [1] https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471 (vAPI 1.0 Writeup)
 
-[2] https://www.youtube.com/watch?v=0F5opL_c5-4&list=PLT1Gj1RmR7vqHK60qS5bpNUeivz4yhmbS (Turkish Language) (vAPI 1.1 Writeup)
+[2] https://www.youtube.com/watch?v=0F5opL_c5-4&list=PLT1Gj1RmR7vqHK60qS5bpNUeivz4yhmbS (Turkish Language) (vAPI 1.1 Walkthrough)
+
+[3] https://medium.com/@jyotiagarwal3190/roottusk-vapi-writeup-341ec99879c (vAPI 1.1 Writeup)
 
 # Acknowledgements
 
