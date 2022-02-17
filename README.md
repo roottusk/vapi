@@ -99,6 +99,10 @@ DB_USERNAME: <database username to use>
 
 Sample Helm Install Command: `helm upgrade --install vapi ./vapi-chart --values=./vapi-chart/values.yaml`
 
+*** Important *** 
+
+The MYSQL_ROOT_PASSWORD on line 232 in the `values.yaml` must match that on line 184 in order to work. 
+
 # Presented At
 [OWASP 20th Anniversary](https://owasp20thanniversaryevent20.sched.com/event/ll1k)
 
