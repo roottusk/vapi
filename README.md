@@ -88,6 +88,17 @@ Browse `http://localhost/vapi/` for Documentation
 
 After Sending requests, refer to the Postman Tests or Environment for Generated Tokens
 
+# Deployment
+
+[Helm](https://helm.sh/) can be used to deploy to a Kubernetes namespace. The chart is in the `vapi-chart` folder. The chart requires one secret named `vapi` with the following values:
+
+```
+DB_PASSWORD: <database password to use>
+DB_USERNAME: <database username to use>
+```
+
+Sample Helm Install Command: `helm upgrade --install vapi ./vapi-chart --values=./vapi-chart/values.yaml`
+
 # Presented At
 [OWASP 20th Anniversary](https://owasp20thanniversaryevent20.sched.com/event/ll1k)
 
