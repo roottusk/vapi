@@ -10,8 +10,8 @@ class API2UsersController extends Controller
     public function login(Request $request)
     {
 
-        $user=API2Users::where('email',$request->input('email'))
-            ->where('password',$request->input('password'))->first();
+        $post_data = json_decode($request->getContent());
+        $user = API2Users::where('email',$post_data->{'email'})->where('password',$post_data->{'password'})->first();
 
         if($user)
         {
