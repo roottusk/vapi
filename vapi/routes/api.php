@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API1UsersController;
+use App\Http\Controllers\JustWeakTokenController;
 use App\Models\API1Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -103,4 +104,17 @@ Route::post('api9/v2/user/login','App\Http\Controllers\API9UsersController@login
 /* API 10 */
 
 Route::get('api10/user/flag','App\Http\Controllers\API10UsersController@flag');
+
+
+
+/* JustWeakToken */
+
+Route::post('jwt/user','App\Http\Controllers\JustWeakTokenController@store');
+
+Route::get('jwt/user','App\Http\Controllers\JustWeakTokenController@show');
+
+
+/* ServerSurfer */
+
+Route::get('serversurfer','App\Http\Controllers\SurferController@show');
 

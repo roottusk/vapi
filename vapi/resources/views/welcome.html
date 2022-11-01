@@ -1,0 +1,278 @@
+
+    <html>
+      <head>
+        <title>vAPI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      </head>
+      <body>
+        <div id='content'>
+    <h1 id="vapi-tweethttpsimgshieldsiotwitterurlhttpshieldsiosvgstylesocialhttpstwittercomintenttweettextcheck20out20vapi20on20githuburlhttpsgithubcomroottuskvapiviavk_tusharhashtagsapisecurityapitop10owasp">vAPI <a href="https://twitter.com/intent/tweet?text=Check%20out%20vAPI%20on%20Github!&url=https://github.com/roottusk/vapi&via=vk_tushar&hashtags=apisecurity,apitop10,owasp"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" /></a></h1>
+<p><a href="https://github.com/roottusk/vapi#installation-docker"><img src="https://img.shields.io/badge/docker-support-%2300D1D1" alt="Docker" /></a>
+<a href="https://app.travis-ci.com/roottusk/vapi"><img src="https://app.travis-ci.com/roottusk/vapi.svg?branch=master" alt="Build Status" /></a>
+<a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blueviolet.svg" alt="License: GPL v3" /></a>
+<a href="https://github.com/roottusk/vapi"><img src="https://img.shields.io/badge/version-v1.1-blue" alt="Version" /></a> 
+<a href="https://github.com/roottusk/vapi"><img src="https://img.shields.io/badge/php-7.3^-yellow" alt="PHP" /></a>
+<a href="https://github.com/roottusk/vapi"><img src="https://img.shields.io/badge/Laravel-8-orange" alt="Laravel" /></a>
+<a href="https://github.com/roottusk/vapi/issues"><img src="https://img.shields.io/github/issues-closed/roottusk/vapi?color=%23eb3434" alt="Issues" /></a></p>
+<p align="center">
+<img src="https://github.com/roottusk/vapi/raw/master/vapi_logo.png" >
+</p>
+<p>vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API that mimics OWASP API Top 10 scenarios in the means of Exercises. </p>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>PHP</li>
+<li>MySQL</li>
+<li>PostMan</li>
+<li>MITM Proxy</li>
+</ul>
+<h1 id="installation-docker">Installation (Docker)</h1>
+<pre><code class="bash language-bash">docker-compose up -d
+</code></pre>
+<h1 id="installation-manual">Installation (Manual)</h1>
+<h2 id="copying-the-code">Copying the Code</h2>
+<pre><code class="bash language-bash">cd &lt;your-hosting-directory&gt;
+</code></pre>
+<pre><code class="bash language-bash">git clone https://github.com/roottusk/vapi.git
+</code></pre>
+<h2 id="setting-up-the-database">Setting up the Database</h2>
+<p>Import <code>vapi.sql</code> into MySQL Database</p>
+<p>Configure the DB Credentials in the <code>vapi/.env</code></p>
+<h2 id="starting-mysql-service">Starting MySQL service</h2>
+<p>Run following command (Linux)</p>
+<pre><code class="bash language-bash">service mysqld start
+</code></pre>
+<h2 id="starting-laravel-server">Starting Laravel Server</h2>
+<p>Go to <code>vapi</code> directory and Run </p>
+<pre><code class="bash language-bash">php artisan serve
+</code></pre>
+<h2 id="setting-up-postman">Setting Up Postman</h2>
+<ul>
+<li>Import <code>vAPI.postman_collection.json</code> in Postman</li>
+<li>Import <code>vAPI_ENV.postman_environment.json</code> in Postman</li>
+</ul>
+<p>OR</p>
+<p>Use Public Workspace </p>
+<p><a>https://www.postman.com/roottusk/workspace/vapi/</a></p>
+<h1 id="usage">Usage</h1>
+<p>Browse <code>http://localhost/vapi/</code> for Documentation</p>
+<p>After Sending requests, refer to the Postman Tests or Environment for Generated Tokens</p>
+<h1 id="deployment">Deployment</h1>
+<p><a href="https://helm.sh/">Helm</a> can be used to deploy to a Kubernetes namespace. The chart is in the <code>vapi-chart</code> folder. The chart requires one secret named <code>vapi</code> with the following values:</p>
+<pre><code>DB_PASSWORD: &lt;database password to use&gt;
+DB_USERNAME: &lt;database username to use&gt;
+</code></pre>
+<p>Sample Helm Install Command: <code>helm upgrade --install vapi ./vapi-chart --values=./vapi-chart/values.yaml</code></p>
+<p>*** Important *** </p>
+<p>The MYSQL<em>ROOT</em>PASSWORD on line 232 in the <code>values.yaml</code> must match that on line 184 in order to work. </p>
+<h1 id="presented-at">Presented At</h1>
+<p><a href="https://owasp20thanniversaryevent20.sched.com/event/ll1k">OWASP 20th Anniversary</a></p>
+<p><a href="https://www.youtube.com/watch?v=7_Q5Rlm7Too">Blackhat Europe 2021 Arsenal</a></p>
+<p><a href="https://cyberweek.ae/2021/hitb-armory/">HITB Cyberweek 2021, Abu Dhabi, UAE</a></p>
+<p><a href="https://athack.com/speakers?keys=Tushar">@Hack, Riyadh, KSA</a></p>
+<p><a href="https://apisecure.co/">APISecure.co</a></p>
+<h1 id="upcoming">Upcoming</h1>
+<h1 id="mentions-and-references">Mentions and References</h1>
+<p>[1] <a>https://apisecurity.io/issue-132-experian-api-leak-breaches-digitalocean-geico-burp-plugins-vapi-lab/</a></p>
+<p>[2] <a>https://dsopas.github.io/MindAPI/references/</a></p>
+<p>[3] <a>https://dzone.com/articles/api-security-weekly-issue-132</a></p>
+<p>[4] <a>https://owasp.org/www-project-vulnerable-web-applications-directory/</a></p>
+<p>[5] <a>https://github.com/arainho/awesome-api-security</a></p>
+<p>[6] <a>https://portswigger.net/daily-swig/introducing-vapi-an-open-source-lab-environment-to-learn-about-api-security</a></p>
+<p>[7] <a>https://apisecurity.io/issue-169-insecure-api-wordpress-plugin-tesla-3rd-party-vulnerability-introducing-vapi/</a></p>
+<h1 id="walkthroughswriteupsvideos">Walkthroughs/Writeups/Videos</h1>
+<p>[1] <a>https://cyc0rpion.medium.com/exploiting-owasp-top-10-api-vulnerabilities-fb9d4b1dd471 (vAPI 1.0 Writeup)</a></p>
+<p>[2] <a>https://www.youtube.com/watch?v=0F5opL_c5-4&amp;list=PLT1Gj1RmR7vqHK60qS5bpNUeivz4yhmbS (Turkish Language) (vAPI 1.1 Walkthrough)</a></p>
+<p>[3] <a>https://medium.com/@jyotiagarwal3190/roottusk-vapi-writeup-341ec99879c (vAPI 1.1 Writeup)</a></p>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<ul>
+<li>The icon and banner uses image from <a href="https://www.flaticon.com/free-icon/bug_190835">Flaticon</a></li>
+</ul>
+
+        </div>
+        <style type='text/css'>body {
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 5px;
+  }
+
+  body > #content {
+    padding: 0px 20px 20px 20px !important;
+  }
+}
+
+body > #content {
+  margin: 0px;
+  max-width: 900px;
+  border: 1px solid #e1e4e8;
+  padding: 10px 40px;
+  padding-bottom: 20px;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  color: #bbb;
+  background-color: #bbb;
+  height: 1px;
+  flex: 0 1 auto;
+  margin: 1em 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+ * Links
+ */
+a {
+  color: #0366d6;
+  text-decoration: none; }
+  a:visited {
+    color: #0366d6; }
+  a:hover {
+    color: #0366d6;
+    text-decoration: underline; }
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+/**
+  * Code blocks
+  */
+
+code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  word-wrap: break-word;
+  padding: .2em .4em;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+
+pre > code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+  font-size: 100%;
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  border-left-width: 3px;
+  padding: 0 1em;
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+blockquote * {
+  font-style: normal !important;
+  letter-spacing: 0;
+  color: #6a737d !important;
+}
+
+/**
+ * Tables
+ */
+table {
+  border-spacing: 2px;
+  display: block;
+  font-size: 14px;
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 16px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+/**
+ * Others
+ */
+
+img {
+  max-width: 100%;
+}
+
+p {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #24292e; }
+
+ul {
+  margin-top: 0; }
+
+li {
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; }
+
+li + li {
+  margin-top: 0.25em; }
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #24292e; }
+
+a:visited {
+  color: #0366d6; }
+
+h1, h2, h3 {
+  border-bottom: 1px solid #eaecef;
+  color: #111;
+  /* Darker */ }</style>
+      </body>
+    </html>
