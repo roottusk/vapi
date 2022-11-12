@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "47369626-9ebe-4a2c-8e34-74e580dd9836",
+		"_postman_id": "054ba5ba-7ee9-48a7-9dc6-09ad497404e6",
 		"name": "vAPI",
 		"description": "vAPI is Vulnerable Adversely Programmed Interface which is Self-Hostable API Interface that mimics OWASP API Top 10 scenarios in the means of Exercises.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15645551"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -1175,6 +1174,63 @@
 										{
 											"key": "url",
 											"value": "https://roottusk.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "StickyNotes",
+					"item": [
+						{
+							"name": "Store a Note",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"note\":\"Hello I am Tushar\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}/vapi/stickynotes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vapi",
+										"stickynotes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Notes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/vapi/stickynotes?format=html",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vapi",
+										"stickynotes"
+									],
+									"query": [
+										{
+											"key": "format",
+											"value": "html"
 										}
 									]
 								}

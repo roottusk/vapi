@@ -1,0 +1,5 @@
+{
+    "require": {
+        "spatie/array-to-xml": "^2.16"
+    }
+}

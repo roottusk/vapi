@@ -118,3 +118,12 @@ Route::get('jwt/user','App\Http\Controllers\JustWeakTokenController@show');
 
 Route::get('serversurfer','App\Http\Controllers\SurferController@show');
 
+
+/* StickyNotes */
+
+Route::post('stickynotes','App\Http\Controllers\StickyNotesController@store');
+
+Route::get('stickynotes','App\Http\Controllers\StickyNotesController@show');
+
+
+
