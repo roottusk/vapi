@@ -35,6 +35,10 @@ class Variables
     }
     public static function getJWTFlag()
     {
-        return "ZmxhZ3thcGkxMF81ZGI2MTFmN2MxZmZkNzQ3OTcxZn0=";
+        return "ZmxhZ3tqd3RfcW5vcGtrdDNvd3N4bmRrMDgzdjF9";
+    }
+    public static function getXSSFlag()
+    {
+        return "ZmxhZ3t4c3NfZTJyZ2h4ZTQxNjRjYzI0NzJ4d2J9";
     }
 }
