@@ -34,14 +34,20 @@ class StickyNotesController extends Controller
             {
                 $sticky_notes= json_decode(json_encode(StickyNotes::all()),true);
 
+                $potential_xss_payload_flag = false;
                 // Lazy XML Conversions Needs to be fixed
                 $xml_output = "<xml>";
                 foreach($sticky_notes as $note)
                 {
                    $xml_output = $xml_output."<note>".$note['note']."</note>";
+
+                   if (Str::contains($note['note'],"<"))
+                   {
+                    $potential_xss_payload_flag=true;
+                   }
                 }
 
-                if($format == "html" and (Str::contains($xml_output,"<script") or Str::contains($xml_output,"<img")) )
+                if($format == "html" and $potential_xss_payload_flag)
                 {
                     $xml_output = $xml_output."<flag>".base64_decode(Variables::getXSSFlag())."</flag>";
                 }
