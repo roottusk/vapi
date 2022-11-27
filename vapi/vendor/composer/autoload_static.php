@@ -142,6 +142,7 @@ class ComposerStaticInit65d9fc829c98efd576e88f35a789e11a
         'F' => 
         array (
             'Fruitcake\\Cors\\' => 15,
+            'Firebase\\JWT\\' => 13,
             'Faker\\' => 6,
             'Facade\\Ignition\\' => 16,
             'Facade\\IgnitionContracts\\' => 25,
@@ -431,6 +432,10 @@ class ComposerStaticInit65d9fc829c98efd576e88f35a789e11a
         array (
             0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
@@ -518,6 +523,7 @@ class ComposerStaticInit65d9fc829c98efd576e88f35a789e11a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\CustomClasses\\CustomHeaderAuth' => __DIR__ . '/../..' . '/app/CustomClasses/CustomHeaderAuth.php',
+        'App\\CustomClasses\\DatabaseMigration' => __DIR__ . '/../..' . '/app/CustomClasses/DatabaseMigration.php',
         'App\\CustomClasses\\Variables' => __DIR__ . '/../..' . '/app/CustomClasses/Variables.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\API10UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/API10UsersController.php',
@@ -554,6 +560,7 @@ class ComposerStaticInit65d9fc829c98efd576e88f35a789e11a
         'App\\Models\\API8Users' => __DIR__ . '/../..' . '/app/Models/API8Users.php',
         'App\\Models\\API9Users' => __DIR__ . '/../..' . '/app/Models/API9Users.php',
         'App\\Models\\Flags' => __DIR__ . '/../..' . '/app/Models/Flags.php',
+        'App\\Models\\JustWeakToken' => __DIR__ . '/../..' . '/app/Models/JustWeakToken.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -1457,6 +1464,11 @@ class ComposerStaticInit65d9fc829c98efd576e88f35a789e11a
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',

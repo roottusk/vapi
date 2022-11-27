@@ -11,4 +11,6 @@ COPY ./vapi /var/www/html/vapi
 
 RUN rm /var/www/html/vapi/.env
 
+RUN echo "flag{ssrf_e0pgt3az9zeqdd4fhatc}" > /flag.txt
+
 CMD ["php","/var/www/html/vapi/artisan","serve","--host=0.0.0.0"]
