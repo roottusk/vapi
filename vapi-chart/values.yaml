@@ -189,10 +189,10 @@ mysql:
     ## @param auth.username Name for a custom user to create
     ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-user-on-first-run
     ##
-    # username: $MYSQL_USERNAME
+    username: "vapi_user"
     ## @param auth.password Password for the new user. Ignored if existing secret is provided
     ##
-    # password: $MYSQL_PASSWORD
+    password: "vapipass"
     ## @param auth.replicationUser MySQL replication user
     ## ref: https://github.com/bitnami/bitnami-docker-mysql#setting-up-a-replication-cluster
     ##
