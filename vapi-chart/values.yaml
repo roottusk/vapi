@@ -154,7 +154,7 @@ mysql:
   image:
     registry: docker.io
     repository: bitnami/mysql
-    tag: 8.0.28-debian-10-r0
+    tag: 8.0
     debug: true
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
