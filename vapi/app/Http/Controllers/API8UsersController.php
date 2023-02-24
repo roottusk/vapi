@@ -20,7 +20,7 @@ class API8UsersController extends Controller
 
         if($user)
         {
-            return response(json_encode(array("success"=>"true","authkey"=>$user->authkey)), 403)
+            return response(json_encode(array("success"=>"true","authkey"=>$user->authkey)), 200)
             ->header('Content-Type', 'application/json');
         }
         else
