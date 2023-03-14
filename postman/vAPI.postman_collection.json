@@ -1219,7 +1219,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/vapi/stickynotes?format=html",
+									"raw": "{{host}}/vapi/stickynotes?format=json",
 									"host": [
 										"{{host}}"
 									],
