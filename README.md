@@ -131,6 +131,8 @@ The MYSQL_ROOT_PASSWORD on line 232 in the `values.yaml` must match that on line
 
 [3] https://medium.com/@jyotiagarwal3190/roottusk-vapi-writeup-341ec99879c (vAPI 1.1 Writeup)
 
+[4] https://medium.com/@thisislazaruss/vapi-walkthrough-api-security-top-10-2023-9cab20c9377 (vAPI 1.3 Writeup)
+
 # Acknowledgements
 
 * The icon and banner uses image from [Flaticon](https://www.flaticon.com/free-icon/bug_190835)
