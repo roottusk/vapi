@@ -2,3 +2,5 @@
 set -euxo pipefail
 
 docker-compose up -d
+
+sleep 5
