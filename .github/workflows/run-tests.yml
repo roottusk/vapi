@@ -1,0 +1,15 @@
+---
+name: "run-tests"
+
+on: [push, pull_request]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2.4.0"
+
+      - run: "./tests/test-build.sh"
+      - run: "./tests/test-can-receive-http.sh"
