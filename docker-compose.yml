@@ -55,7 +55,7 @@ services:
           MIX_PUSHER_APP_KEY: "${PUSHER_APP_KEY}"
           MIX_PUSHER_APP_CLUSTER: "${PUSHER_APP_CLUSTER}"
     db:
-        image: mysql:8.0
+        image: mysql:8
         ports: 
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
