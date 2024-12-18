@@ -71,7 +71,7 @@ services:
         networks:
             - default
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin:latest
         links: 
             - db:db
         ports:
