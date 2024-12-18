@@ -3,7 +3,7 @@ services:
     www:
         build: .
         ports: 
-            - "80:80"
+            - "8080:80"
         volumes:
             - ./vapi:/var/www/html/vapi
         links:
